@@ -76,7 +76,7 @@ public class AddressBookStructure {
     }
     
     public String getemail() {
-        return phoneno;
+        return email;
     }
     public void setemail(String email) {
         this.email = email;
