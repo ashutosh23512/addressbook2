@@ -19,5 +19,14 @@ public class AddressBookContact {
 		}
 		return null;
 	}
+	public void  deletePerson(String firstName) {
+		for(int i=0 ; i<personContacts.size();i++) {
+			 if(personContacts.get(i).getfirstname().equalsIgnoreCase(firstName)) {
+				 	personContacts.remove(i);
+				 	System.out.println("Person Deleted");
+				 	return;
+			 }
+		}
+	}
 
 }
