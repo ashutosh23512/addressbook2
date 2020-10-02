@@ -18,22 +18,25 @@ public class AdressBookImpl implements AddressBookService {
 		System.out.println("Option For Address Book");
 
 		System.out.println("1.) Find A Person");
-		System.out.println("2.) Create A Persion");
-		System.out.println("3.) Exit");
+		System.out.println("2.) Create A Person");
+		System.out.println("3.) Edit A Person");
+		System.out.println("4.) Exit");
 		
 		int option = sc.nextInt();
 		switch(option) {	
 		
 		case 1:
 			findAPerson();
-			//display();
 			break;
 		case 2:
-			AddressBookStructure person = new  AddressBookStructure();
+			//AddressBookStructure person = new  AddressBookStructure();
 			createAPerson();		
-			display();
+			//display();
 			break;
 		case 3:
+			updateAPerson();
+			break;
+		case 4:
 			return;
 		default:
 			System.out.println("Invalid Input");
@@ -56,6 +59,18 @@ public class AdressBookImpl implements AddressBookService {
 	}
 	public void display() {
 		addressBook.getAddressBook();
+	}
+	
+	@Override
+	public void updateAPerson() {
+		System.out.println("Enter Person Name");
+		String name = sc.next();
+		AddressBookStructure person = addressBook.isPerson(name);
+		if(Objects.nonNull(person)) {
+			personService.updatePerson(person);
+			return;
+		}
+		System.out.println("Person Not Found");
 	}
 
 
