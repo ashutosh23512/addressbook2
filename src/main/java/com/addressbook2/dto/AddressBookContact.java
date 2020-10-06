@@ -1,5 +1,7 @@
 package com.addressbook2.dto;
 import java.util.*;
+import java.util.function.Predicate;
+
 public class AddressBookContact {
 	private List<AddressBookStructure> personContacts = new ArrayList<AddressBookStructure>();
 	private String name;
@@ -10,6 +12,15 @@ public class AddressBookContact {
 	public void addContact(AddressBookStructure contactObj) {
 		personContacts.add(contactObj);
 	 }
+	
+	public boolean checkname(String fname) {
+		return personContacts.stream().anyMatch(x -> x.getfirstname().equalsIgnoreCase(fname));
+			
+	}
+
+	public AddressBookContact() {
+		
+	}
 	public AddressBookContact(String name) {
 		this.name = name;
 		personContacts= new ArrayList<AddressBookStructure>();
