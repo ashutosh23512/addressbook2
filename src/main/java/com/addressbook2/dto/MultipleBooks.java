@@ -35,6 +35,18 @@ public class MultipleBooks {
 			  addressBooks.stream().forEach(x -> statee.addAll(x.personContacts.stream().filter(a -> a.getstate().equalsIgnoreCase(state)).collect(Collectors.toList())));
 			 return statee;
 		}
+		public int citycount(String city) {
+			 int cityy[]= {0};
+			  addressBooks.stream().forEach(x ->cityy[0]+=(x.personContacts.stream().filter(a -> a.getcity().equalsIgnoreCase(city)).count()));
+			 return cityy[0];
+		}
+		public int statecount(String state) {
+			 int statee[]= {0};
+			  addressBooks.stream().forEach(x ->statee[0]+=(x.personContacts.stream().filter(a -> a.getcity().equalsIgnoreCase(state)).count()));
+			 return statee[0];
+		}
+
+		
 
 	}
 
