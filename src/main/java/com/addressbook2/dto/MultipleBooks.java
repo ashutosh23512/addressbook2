@@ -1,6 +1,7 @@
 package com.addressbook2.dto;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 public class MultipleBooks {
 
 		private List<AddressBookContact> addressBooks;
@@ -22,6 +23,17 @@ public class MultipleBooks {
 				
 			}
 			return null;
+		}
+		public List<AddressBookStructure> searchcity(String city) {
+			 List<AddressBookStructure> cityy = new ArrayList<AddressBookStructure>();
+			  addressBooks.stream().forEach(x -> cityy.addAll(x.personContacts.stream().filter(a -> a.getcity().equalsIgnoreCase(city)).collect(Collectors.toList())));
+			 return cityy;
+		}
+
+		public List<AddressBookStructure> searchstate(String state) {
+			 List<AddressBookStructure> statee= new ArrayList<AddressBookStructure>();
+			  addressBooks.stream().forEach(x -> statee.addAll(x.personContacts.stream().filter(a -> a.getstate().equalsIgnoreCase(state)).collect(Collectors.toList())));
+			 return statee;
 		}
 
 	}

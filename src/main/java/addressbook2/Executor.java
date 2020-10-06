@@ -16,7 +16,9 @@ public class Executor {
 		while (true) {
 			System.out.println("1.) Open an existing Address book");
 			System.out.println("2.) Create new Address Book");
-			System.out.println("3.) Exit");
+			System.out.println("3.) Search Contacts by City");
+			System.out.println("4.) Search Contacts by State");
+			System.out.println("5.) Exit");
 			int options = sc.nextInt();
 
 			switch (options) {
@@ -27,7 +29,18 @@ public class Executor {
 				createNewAddressBook(addressBookService, addressBook, sc);
 				break;
 			case 3:
-				System.out.println("Bye\n\n");
+				System.out.println("Enter City Name");
+				String city=sc.next();
+				System.out.println(addressBook.searchcity(city));
+				break;
+			case 4:
+				System.out.println("Enter State Name");
+				String state=sc.next();
+				System.out.println(addressBook.searchstate(state));
+				break;
+				
+			case 5:
+				System.out.println("Good Bye\n\n");
 				return;
 			default:
 				break;
