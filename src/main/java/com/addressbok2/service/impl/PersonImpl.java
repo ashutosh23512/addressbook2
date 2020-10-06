@@ -1,12 +1,14 @@
 package com.addressbok2.service.impl;
-import java.util.Scanner;
-import com.addressbook2.dto.AddressBookStructure;
+import java.util.*;
+import java.util.function.Predicate;
+import com.addressbook2.dto.*;
+//import com.addressbook2.dto.AddressBookStructure;
 import com.addressbok2.service.PersonService;
 public class PersonImpl implements PersonService {
 	
 private Scanner sc;
 	
-	
+	AddressBookContact abc=new AddressBookContact();
 	public PersonImpl(Scanner sc ) {
 		this.sc= sc;
 	}
@@ -14,7 +16,9 @@ private Scanner sc;
 	public AddressBookStructure createPerson() {
 		AddressBookStructure personContact = new AddressBookStructure();
 		System.out.print("Enter First Name");
-		personContact.setfirstname(sc.next());
+		String x=sc.next();
+		if(!abc.checkname(x)) {
+		personContact.setfirstname(x);
 		System.out.print("Enter Last Name");
 		personContact.setlastname(sc.next());
 		System.out.print("Enter Address ");
@@ -29,6 +33,8 @@ private Scanner sc;
 		personContact.setphone(sc.next());
 		System.out.print("Enter Email");
 		personContact.setemail(sc.next());
+		}
+		else System.out.println("Contact Already Exists");
 		return personContact;
 	}
 	
