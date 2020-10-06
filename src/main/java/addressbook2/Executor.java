@@ -32,11 +32,14 @@ public class Executor {
 				System.out.println("Enter City Name");
 				String city=sc.next();
 				System.out.println(addressBook.searchcity(city));
+				System.out.println(addressBook.citycount(city));
+
 				break;
 			case 4:
 				System.out.println("Enter State Name");
 				String state=sc.next();
 				System.out.println(addressBook.searchstate(state));
+				System.out.println(addressBook.statecount(state));
 				break;
 				
 			case 5:
