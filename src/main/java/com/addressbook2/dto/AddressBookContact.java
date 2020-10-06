@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class AddressBookContact {
-	private List<AddressBookStructure> personContacts = new ArrayList<AddressBookStructure>();
+	static List<AddressBookStructure> personContacts = new ArrayList<AddressBookStructure>();
 	private String name;
 	
 	public List<AddressBookStructure> getAddressBook(){
