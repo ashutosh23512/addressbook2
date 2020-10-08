@@ -21,7 +21,8 @@ public class AdressBookImpl implements AddressBookService {
 		System.out.println("2.) Create A Person");
 		System.out.println("3.) Edit A Person");
 		System.out.println("4.) Delete A Person");
-		System.out.println("5.) Exit");
+		System.out.println("5.) Delete A Person");
+		System.out.println("6.) Exit");
 
 		
 		int option = sc.nextInt();
@@ -42,6 +43,11 @@ public class AdressBookImpl implements AddressBookService {
 			deleteAPerson();
 			break;
 		case 5:
+			List<AddressBookStructure> sortedbook = new ArrayList<AddressBookStructure>();
+			sortedbook=addressBook.sortContact();
+			System.out.println(sortedbook);
+			break;
+		case 6:
 			return;
 		default:
 			System.out.println("Invalid Input");

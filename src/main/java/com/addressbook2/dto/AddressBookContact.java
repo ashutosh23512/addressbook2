@@ -1,6 +1,7 @@
 package com.addressbook2.dto;
 import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class AddressBookContact {
 	static List<AddressBookStructure> personContacts = new ArrayList<AddressBookStructure>();
@@ -33,6 +34,9 @@ public class AddressBookContact {
 			 }
 		}
 		return null;
+	}
+	public List<AddressBookStructure> sortContact(){
+		return personContacts.stream().sorted((n1, n2) -> n1.getfirstname().compareTo(n2.getfirstname())).collect(Collectors.toList());
 	}
 	public String getName() {
 		return name;
