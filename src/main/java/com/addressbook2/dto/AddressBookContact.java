@@ -35,8 +35,19 @@ public class AddressBookContact {
 		}
 		return null;
 	}
-	public List<AddressBookStructure> sortContact(){
+	public List<AddressBookStructure> sortcontact(){
 		return personContacts.stream().sorted((n1, n2) -> n1.getfirstname().compareTo(n2.getfirstname())).collect(Collectors.toList());
+	}
+	public List<AddressBookStructure> sortcity(){
+		return personContacts.stream().sorted((n1,n2) -> n1.getcity().compareTo(n2.getcity())).collect(Collectors.toList());
+	}
+	
+	public List<AddressBookStructure> sortstate(){
+		return personContacts.stream().sorted((n1,n2) -> n1.getstate().compareTo(n2.getstate())).collect(Collectors.toList());
+	}
+	
+	public List<AddressBookStructure> sortzip(){
+		return personContacts.stream().sorted((n1,n2) -> n1.getzip().compareTo(n2.getzip())).collect(Collectors.toList());
 	}
 	public String getName() {
 		return name;
