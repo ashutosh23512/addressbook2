@@ -21,6 +21,8 @@ public class AddressBookIOServiceMain {
 		contactList.add(contact3);
 		addressBookFileIOService.writeData(contactList);
 		addressBookFileIOService.readData();
+		addressBookFileIOService.writeCSVData(contactList);
+		addressBookFileIOService.readCSVData();
 
 	}
 
