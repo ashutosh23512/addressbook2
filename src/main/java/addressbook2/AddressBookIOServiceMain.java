@@ -23,6 +23,11 @@ public class AddressBookIOServiceMain {
 		addressBookFileIOService.readData();
 		addressBookFileIOService.writeCSVData(contactList);
 		addressBookFileIOService.readCSVData();
+		addressBookFileIOService.readJsonData();
+		addressBookFileIOService.writeJsonData(contactList);
+
+
+		
 
 	}
 
